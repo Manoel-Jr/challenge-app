@@ -1,0 +1,60 @@
+<mat-card>
+    <mat-card-title>Novo Cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" mask="000.000.000-00"
+                [(ngModel)]="cliente.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Data de Nascimento" [matDatepicker]="picker"
+                [(ngModel)]="cliente.dataNascimento" name="dataNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CEP" mask="99999-999"
+                [(ngModel)]="cliente.endereco.cep" name="cep">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Rua"
+                [(ngModel)]="cliente.endereco.rua" name="rua">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Número"
+                [(ngModel)]="cliente.endereco.numero" name="numero">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Complemento"
+                [(ngModel)]="cliente.endereco.complemento" name="complemento">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Bairro"
+                [(ngModel)]="cliente.endereco.bairro" name="bairro">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Cidade"
+                [(ngModel)]="cliente.endereco.cidade" name="cidade">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="UF"
+                [(ngModel)]="cliente.endereco.uf" name="uf">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-select matInput [(ngModel)]="cliente.sexo" placeholder="Sexo" name="sexo">
+                <mat-option value="MASCULINO">Masculino</mat-option>
+                <mat-option value="FEMININO">Feminino</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="create()" color="primary">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
